@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="bg-primary text-white py-5 text-center" style="margin-top: 56px;">
+
+    <div class="container">
+
+      <h1 class="display-4">Welcome to my E-commerce website</h1>
+
+      <p class="lead">A Simple responsive website using E-commerce</p>
+
+      <a href="{% url 'products' %}" class="btn btn-light btn-lg mt-3">Explore Products</a>
+
+    </div>
+  </div>
+{% endblock %}
+{% comment %} 
+1.Templets inheritance 
+2.Django url  
+{% endcomment %}

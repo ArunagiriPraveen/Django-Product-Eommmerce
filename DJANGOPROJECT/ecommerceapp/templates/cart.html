@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container py-5">
+    <h2 class="text-center my-4">Your Cart</h2>
+
+    {% if products %}
+      <div class="container">
+        {% for product in products %}
+          <div class="card mb-3 p-3 mx-auto" style="max-width: 650px;">
+            <div class="d-flex align-items-center justify-content-between">
+              {% if product.image %}
+                <img src="{{ product.image.url }}" alt="product image" style="width: 90px; height: 90px; object-fit: cover; border-radius: 10px;" />
+              {% endif %}
+
+              <h5 class="mb-0 flex-grow-1 ms-3">{{ product.name }}</h5>
+
+              <div class="text-end">
+                <p class="mb-1 fw-bold text-success">₹{{ product.price }}</p>
+
+                <a href="#" class="btn btn-success btn-sm">Proceed to Payment</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center">Your cart is empty</p>
+    {% endif %}
+  </div>
+{% endblock %}
+
